@@ -31,7 +31,7 @@ input.onButtonPressed(Button.B, function () {
 })
 input.onPinPressed(TouchPin.P1, function () {
     // calcule
-    Calculateur = RATIO + NbPhoto
+    Calculateur = RATIO / NbPhoto
     CTRlimite = Calculateur
     compteur = NbPhoto
     // calcule
@@ -70,7 +70,7 @@ DigitalPin.P16
 pins.digitalWritePin(DigitalPin.P8, 0)
 NbPhoto = 0
 rotation = 1
-RATIO = 21.6
+RATIO = 15
 basic.forever(function () {
     if (CTRlimite > RATIO) {
         winner()
