@@ -1,5 +1,6 @@
 function _1_degret () {
-	
+    motor.setDelay(10)
+    motor.moveClockwise(Calculateur, stepUnit.Rotations)
 }
 input.onButtonPressed(Button.A, function () {
     basic.pause(100)
@@ -48,15 +49,19 @@ input.onPinPressed(TouchPin.P1, function () {
     CTRlimite = 0
 })
 function PriseDeVue () {
-	
+    pins.digitalWritePin(DigitalPin.P8, 1)
+    basic.pause(1000)
+    pins.digitalWritePin(DigitalPin.P8, 0)
+    basic.pause(1000)
 }
 let compteur = 0
-let Calculateur = 0
 let CTRlimite = 0
+let Calculateur = 0
 let RATIO = 0
 let rotation = 0
 let NbPhoto = 0
-let motor = stepperMotor.createMotor(
+let motor: stepperMotor.Motor = null
+motor = stepperMotor.createMotor(
 DigitalPin.P13,
 DigitalPin.P14,
 DigitalPin.P15,
