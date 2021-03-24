@@ -6,7 +6,7 @@ input.onButtonPressed(Button.A, function () {
     basic.pause(100)
     NbPhoto += 1
     basic.pause(100)
-    CTRlimite = NbPhoto
+    compteur = NbPhoto
 })
 function winner () {
     basic.clearScreen()
@@ -27,7 +27,7 @@ input.onButtonPressed(Button.B, function () {
     basic.pause(100)
     NbPhoto += -1
     basic.pause(100)
-    CTRlimite = NbPhoto
+    compteur = NbPhoto
 })
 input.onPinPressed(TouchPin.P1, function () {
     // calcule
@@ -54,8 +54,8 @@ function PriseDeVue () {
     pins.digitalWritePin(DigitalPin.P8, 0)
     basic.pause(1000)
 }
-let compteur = 0
 let CTRlimite = 0
+let compteur = 0
 let Calculateur = 0
 let RATIO = 0
 let rotation = 0
@@ -70,7 +70,7 @@ DigitalPin.P16
 pins.digitalWritePin(DigitalPin.P8, 0)
 NbPhoto = 0
 rotation = 1
-RATIO = 3.8
+RATIO = 21.6
 basic.forever(function () {
     if (CTRlimite > RATIO) {
         winner()
